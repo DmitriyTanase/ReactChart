@@ -1,12 +1,33 @@
 .site-layout-content {
-  background: #fff;
-  padding: 24px;
-  min-height: 280px;
+    background: #fff;
+    padding: 24px;
+    min-height: 280px;
 }
+
 #components-layout-demo-top .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 24px 16px 0;
-  float: left;
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+}
+
+#row1 {
+    height: 340px;
+    background: #00a0e9;
+    justify-content: space-around;
+}
+
+#row2 {
+    background: #e91019;
+    height: 300px;
+    justify-content: space-around;
+}
+
+#col1, #col2, #col3, #col4, #col5, #col6 {
+    height: 70%;
+    text-align: center;
+    background: rgba(208, 212, 195, 0.84);
+    border-radius: 6px;
+    font-size: 20px;
 }

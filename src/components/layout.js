@@ -20,7 +20,40 @@ class Page extends React.Component {
                 </Header>
                 <Content style={{ padding: '0 50px' }}>
                     <div className="site-layout-content">
-                        <div id={chart}/>
+                        <Row id='row1' gutter={[32, 30]}>
+                            <Col id='col1' span={5}>
+                                <div>
+                                    Column
+                                </div>
+                            </Col>
+                            <Col id='col2' span={5}>
+                                <div>
+                                    Column
+                                </div>
+                            </Col>
+                            <Col id='col3' span={5}>
+                                <div>
+                                    Column
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row id='row2' gutter={[32, 2]}>
+                            <Col id='col4' span={5}>
+                                <div>
+                                    Column
+                                </div>
+                            </Col>
+                            <Col id='col5' span={3}>
+                                <div>
+                                    Column
+                                </div>
+                            </Col>
+                            <Col id='col6' span={7}>
+                                <div>
+                                    Column
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
