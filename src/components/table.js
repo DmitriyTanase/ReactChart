@@ -1,23 +1,41 @@
-import React from 'react';
-import ApexCharts from 'apexcharts';
+import React, { Component } from "react";
+import Chart from "react-apexcharts";
 
-let options = {
-    chart: {
-        height: 350,
-        type: 'radialBar',
-    },
-    series: [75],
-    labels: ['Total Products'],
-};
+class Table extends Component {
+    constructor(props) {
+        super(props);
 
-let chart = new ApexCharts(document.querySelector("#chart"), options);
-//chart.render();
+        this.state = {
+            options: {
+                chart: {
+                    id: "basic-bar"
+                },
+                xaxis: {
+                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+                }
+            },
+            series: [
+                {
+                    name: "series-1",
+                    data: [30, 40, 45, 50, 49, 60, 70, 91]
+                }
+            ]
+        };
+    }
 
-class Table extends React.Component {
     render() {
         return (
-            <div id="chart">
-
+            <div className="app">
+                <div className="row">
+                    <div className="mixed-chart">
+                        <Chart
+                            options={this.state.options}
+                            series={this.state.series}
+                            type="bar"
+                            width="500"
+                        />
+                    </div>
+                </div>
             </div>
         );
     }
