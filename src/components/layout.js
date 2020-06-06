@@ -2,7 +2,7 @@ import {Layout, Menu, Row, Col} from 'antd';
 import React from 'react';
 import '../layout.css';
 import 'antd/dist/antd.css';
-import chart from './totalProducts';
+import Table from './table';
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,6 +20,8 @@ class Page extends React.Component {
                 </Header>
                 <Content style={{ padding: '0 50px' }}>
                     <div className="site-layout-content">
+                        <div  id="chart"/>
+                        <Table />
                         <Row id='row1' gutter={[32, 30]}>
                             <Col id='col1' span={5}>
                                 <div>
