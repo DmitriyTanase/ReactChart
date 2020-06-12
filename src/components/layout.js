@@ -3,10 +3,23 @@ import React from 'react';
 import '../layout.css';
 import 'antd/dist/antd.css';
 import Table from './table';
+//import LineChart from './LineChart/index'
+import Donut from "./Donut/index";
+import Area from "./Area";
+import Pie from "./Pie";
 
 const { Header, Content, Footer } = Layout;
 
 class Page extends React.Component {
+    gettingDataForPie = async (e) => {
+        e.preventDefault();
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const mainData = await response.json();
+        const dataLength = mainData.map(item => item.name.length);
+        console.log(dataLength);
+        return dataLength;
+    };
+
     render() {
         return (
             <Layout className="layout">
@@ -21,6 +34,10 @@ class Page extends React.Component {
                 <Content style={{ padding: '0 50px' }}>
                     <div className="site-layout-content">
                         <Table />
+                        {/*<LineChart />*/}
+                        <Donut />
+                        <Area />
+                        <Pie pieDataMetod = {this.gettingDataForPie} />
                         <Row id='row1' gutter={[32, 30]}>
                             <Col id='col1' span={5}>
                                 <div>
