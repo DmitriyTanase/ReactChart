@@ -1,43 +1,54 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Chart from "react-apexcharts";
-//import pieData from "./PieData";
 
 class Pie extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            options: {
-                chart: {
-                    height: 350,
-                    type: 'line'
+            error: null,
+            isLoaded: false,
+            items: []
+        };
+    }
+
+    componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then((result) => {
+                    this.setState({
+                        isLoaded: true,
+                        items: result.map(item => item.name.length)
+                    });
+                    console.log(result)
                 },
-                dataLabels: {
-                    enabled: false
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
                 }
-            },
-            series: [{
-                name: 'Pie Plot1',
-                type: 'area',
-                data: this.props.pieDataMetod
-            }]
-        }
+            )
     }
 
     render() {
-        return (
-            <div className="pie">
-                <form>
-                    <button> Получить данные </button>
-                </form>
-                <Chart
-                    options={this.state.options}
-                    series={this.state.series}
-                    type="area"
-                    width="500"
-                />
-            </div>
-        );
+        const {error, isLoaded, items} = this.state;
+        if (error) {
+            return <div>Ошибка: {error.message}</div>;
+        } else if (!isLoaded) {
+            return <div>Загрузка...</div>;
+        } else {
+            return (
+                <div>
+                    <Chart
+                        series={[{data: items}]}
+                        type="line"
+                        options={{}}
+                        width="500"
+                    />
+                </div>
+            );
+        }
     }
 }
 
