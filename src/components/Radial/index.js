@@ -1,16 +1,18 @@
 import React, {Component} from "react";
 import Chart from "react-apexcharts";
-import { Typography, Space } from 'antd';
+import {Typography, Space} from 'antd';
 
-const { Text } = Typography;
-class Pie extends Component {
+const {Text} = Typography;
+
+class Radial extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             error: null,
             isLoaded: false,
-            items: []
+            items: [],
+            names: []
         };
     }
 
@@ -20,7 +22,8 @@ class Pie extends Component {
             .then((result) => {
                     this.setState({
                         isLoaded: true,
-                        items: result.map(item => item.name.length)
+                        items: result.map(item => item.name.length),
+                        names: result.map(item => item.name)
                     });
                     console.log(result)
                 },
@@ -34,7 +37,7 @@ class Pie extends Component {
     }
 
     render() {
-        const {error, isLoaded, items} = this.state;
+        const {error, isLoaded, items, names} = this.state;
         if (error) {
             return (
                 <space align="center">
@@ -51,9 +54,15 @@ class Pie extends Component {
             return (
                 <div>
                     <Chart
-                        series={[{data: items}]}
-                        type="line"
-                        options={{}}
+                        series={[{data: items, name: names}]}
+                        type="bar"
+                        options={
+                            {
+                                xaxis: {
+                                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000]
+                                }
+                            }
+                        }
                          width="500"
                     />
                 </div>
@@ -62,4 +71,4 @@ class Pie extends Component {
     }
 }
 
-export default Pie;
+export default Radial;

@@ -10,38 +10,50 @@ class Grid extends React.Component {
             <Layout className="layout">
                 <Content style={{ padding: '0 50px' }}>
                     <div className="site-layout-content">
-                        <Row id='row1' gutter={[32, 30]}>
-                            <Col id='col1' span={5}>
-                                <div>
+                        <Row id='row1'  align="middle" >
+                            <Col id='col1'
+                                 xs={24}
+                                 sm={24}
+                                 md={8}
+                                 lg={6}>
                                     Column
-                                </div>
                             </Col>
-                            <Col id='col2' span={5}>
-                                <div>
+                            <Col id='col2'
+                                 xs={24}
+                                 sm={24}
+                                 md={8}
+                                 lg={6}>
                                     Column
-                                </div>
                             </Col>
-                            <Col id='col3' span={5}>
-                                <div>
+                            <Col id='col3'
+                                 xs={24}
+                                 sm={24}
+                                 md={8}
+                                 lg={6}>
                                     Column
-                                </div>
                             </Col>
                         </Row>
-                        <Row id='row2' gutter={[32, 2]}>
-                            <Col id='col4' span={5}>
-                                <div>
+                        <Row id='row2'  align="middle" >
+                            <Col id='col4'
+                                 xs={24}
+                                 sm={24}
+                                 md={8}
+                                 lg={6}>
                                     Column
-                                </div>
                             </Col>
-                            <Col id='col5' span={3}>
-                                <div>
+                            <Col id='col5'
+                                 xs={24}
+                                 sm={24}
+                                 md={8}
+                                 lg={6}>
                                     Column
-                                </div>
                             </Col>
-                            <Col id='col6' span={7}>
-                                <div>
+                            <Col id='col6'
+                                 xs={24}
+                                 sm={24}
+                                 md={8}
+                                 lg={6}>
                                     Column
-                                </div>
                             </Col>
                         </Row>
                     </div>

@@ -11,7 +11,7 @@ class Area extends Component {
                     options={areaData.options}
                     series={areaData.series}
                     type="area"
-                    width="500"
+                    width="450"
                 />
             </div>
         );
