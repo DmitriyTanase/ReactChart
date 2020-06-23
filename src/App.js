@@ -7,6 +7,7 @@ import Donut from "./components/Donut";
 import Table from "./components/table";
 import Pie from "./components/Pie";
 import Radial from "./components/Radial";
+import FetchCarts from "./components/FetchingCharts/getData"
 import {
     BrowserRouter as Router,
     Switch,
@@ -64,7 +65,7 @@ function StaticCharts() {
     return (
         <div>
             <h2>Static Charts</h2>
-            <Row align="middle" gutter={{ xs: 8, sm: 8, md: 24, lg: 24 }}>
+            <Row align="middle" justify="space-between">
                 <Col >
                     <Table/>
                 </Col>
@@ -83,14 +84,15 @@ function OnlineCharts() {
     return (
         <div>
             <h2>Online charts</h2>
-            <Row align="middle" gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                <Col >
-                    <Pie/>
-                </Col>
-                <Col >
-                    <Radial/>
-                </Col>
-            </Row>
+            <FetchCarts />
+            {/*<Row align="middle" justify="space-between">*/}
+            {/*    <Col >*/}
+            {/*        <Pie/>*/}
+            {/*    </Col>*/}
+            {/*    <Col >*/}
+            {/*        <Radial/>*/}
+            {/*    </Col>*/}
+            {/*</Row>*/}
         </div>
     )
 }
