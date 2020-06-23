@@ -10,49 +10,25 @@ class Grid extends React.Component {
             <Layout className="layout">
                 <Content style={{ padding: '0 50px' }}>
                     <div className="site-layout-content">
-                        <Row id='row1'  align="middle" >
-                            <Col id='col1'
-                                 xs={24}
-                                 sm={24}
-                                 md={8}
-                                 lg={6}>
+                        <Row id='row1'  align="middle" justify="space-around">
+                            <Col id='col1' xs={24} sm={24} md={8}>
                                     Column
                             </Col>
-                            <Col id='col2'
-                                 xs={24}
-                                 sm={24}
-                                 md={8}
-                                 lg={6}>
+                            <Col id='col2' xs={24} sm={8} md={12}>
                                     Column
                             </Col>
-                            <Col id='col3'
-                                 xs={24}
-                                 sm={24}
-                                 md={8}
-                                 lg={6}>
+                            <Col id='col3' xs={24} sm={24} md={8}>
                                     Column
                             </Col>
                         </Row>
-                        <Row id='row2'  align="middle" >
-                            <Col id='col4'
-                                 xs={24}
-                                 sm={24}
-                                 md={8}
-                                 lg={6}>
+                        <Row id='row2'  align="middle" justify="space-around">
+                            <Col id='col4' xs={24} sm={24} md={8}>
                                     Column
                             </Col>
-                            <Col id='col5'
-                                 xs={24}
-                                 sm={24}
-                                 md={8}
-                                 lg={6}>
+                            <Col id='col5' xs={24} sm={24} md={8}>
                                     Column
                             </Col>
-                            <Col id='col6'
-                                 xs={24}
-                                 sm={24}
-                                 md={8}
-                                 lg={6}>
+                            <Col id='col6' xs={24} sm={24} md={8}>
                                     Column
                             </Col>
                         </Row>

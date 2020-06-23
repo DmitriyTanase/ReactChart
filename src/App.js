@@ -36,7 +36,7 @@ export default function App() {
                     </Header>
                 </Layout>
 
-                <Content style={{marginTop: 64,}}>
+                <Content style={{marginTop: 64}}>
                     <Switch>
                         <Route path="/charts">
                             <StaticCharts/>
@@ -50,11 +50,7 @@ export default function App() {
                     </Switch>
                 </Content>
 
-                <Footer style={{
-                    textAlign: 'center',
-                    position: "fixed",
-                    width: "100%",
-                }}>Ant Design ©2018 Created by Ant UED</Footer>
+                <Footer style={{textAlign: 'center', width: "100%"}}>Ant Design ©2018 Created by Ant UED</Footer>
             </div>
         </Router>
     );
@@ -68,7 +64,7 @@ function StaticCharts() {
     return (
         <div>
             <h2>Static Charts</h2>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+            <Row align="middle" gutter={{ xs: 8, sm: 8, md: 24, lg: 24 }}>
                 <Col >
                     <Table/>
                 </Col>
@@ -87,7 +83,7 @@ function OnlineCharts() {
     return (
         <div>
             <h2>Online charts</h2>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+            <Row align="middle" gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                 <Col >
                     <Pie/>
                 </Col>
