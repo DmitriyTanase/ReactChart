@@ -1,0 +1,18 @@
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+content {
+    marginTop: 64;
+    flexGrow: 1;
+}
+
+footer {
+    flexGrow: 0;
+    textAlign: 'center';
+}

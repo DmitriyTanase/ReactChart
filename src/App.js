@@ -85,14 +85,14 @@ function OnlineCharts() {
         <div>
             <h2>Online charts</h2>
             <FetchCarts />
-            {/*<Row align="middle" justify="space-between">*/}
-            {/*    <Col >*/}
-            {/*        <Pie/>*/}
-            {/*    </Col>*/}
-            {/*    <Col >*/}
-            {/*        <Radial/>*/}
-            {/*    </Col>*/}
-            {/*</Row>*/}
+            <Row align="middle" justify="space-between">
+                <Col >
+                    <Pie/>
+                </Col>
+                <Col >
+                    <Radial/>
+                </Col>
+            </Row>
         </div>
     )
 }
