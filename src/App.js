@@ -1,6 +1,5 @@
 import React from 'react';
-import {Layout, Row, Col, Menu, Space} from 'antd';
-import AuthService from "./services/auth.service";
+import {Layout, Row, Col, Menu} from 'antd';
 import 'antd/dist/antd.css';
 import Header from './components/Header.js';
 import Login from './components/login';
@@ -13,12 +12,7 @@ import Table from "./components/table";
 import Pie from "./components/Pie";
 import Radial from "./components/Radial";
 import FetchCarts from "./components/FetchingCharts/getData"
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 
 const {Content, Footer} = Layout;

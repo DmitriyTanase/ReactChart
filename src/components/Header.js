@@ -12,8 +12,6 @@ class Header extends React.Component {
         this.logOut = this.logOut.bind(this);
 
         this.state = {
-            showModeratorBoard: false,
-            showAdminBoard: false,
             currentUser: undefined
         };
     }
@@ -24,8 +22,6 @@ class Header extends React.Component {
         if (user) {
             this.setState({
                 currentUser: user,
-                showModeratorBoard: user.roles.includes("ROLE_MODERATOR"),
-                showAdminBoard: user.roles.includes("ROLE_ADMIN")
             });
         }
     }
