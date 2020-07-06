@@ -5,26 +5,26 @@ import {Layout, Menu} from 'antd';
 import AuthService from "../services/auth.service";
 
 
-
-class Header extends React.Component {
+const {Header} = Layout;
+class Navigbar extends React.Component {
     constructor(props) {
         super(props);
         this.logOut = this.logOut.bind(this);
 
         this.state = {
-            currentUser: undefined
+            currentUser: false
         };
     }
 
-    componentDidMount() {
-        const user = AuthService.getCurrentUser();
-
-        if (user) {
-            this.setState({
-                currentUser: user,
-            });
-        }
-    }
+    // componentDidMount() {
+    //     const user = AuthService.getCurrentUser();
+    //
+    //     if (user) {
+    //         this.setState({
+    //             currentUser: user,
+    //         });
+    //     }
+    // }
 
     logOut() {
         AuthService.logout();
@@ -47,27 +47,41 @@ class Header extends React.Component {
                             <Menu.Item>
                                 <Link to="/onlineCharts">Online charts</Link>
                             </Menu.Item>
-                            {currentUser ? (
-                                <div>
-                                    <Menu.Item>
-                                        <Link to="/profile">{currentUser.username}</Link>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <a href="/" onClick={this.logOut}>
-                                            LogOut
-                                        </a>
-                                    </Menu.Item>
-                                </div>
-                            ) : (
-                                <div>
-                                    <Menu.Item>
-                                        <Link to="/login">Login</Link>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <Link to="/register">Register</Link>
-                                    </Menu.Item>
-                                </div>
-                            )}
+                            {/*<Menu.Item>*/}
+                            {/*    <Link to="/profile">{currentUser.username}</Link>*/}
+                            {/*</Menu.Item>*/}
+                            {/*<Menu.Item>*/}
+                            {/*    <a href="/" onClick={this.logOut}>*/}
+                            {/*        LogOut*/}
+                            {/*    </a>*/}
+                            {/*</Menu.Item>*/}
+                            {/*<Menu.Item>*/}
+                            {/*    <Link to="/login">Login</Link>*/}
+                            {/*</Menu.Item>*/}
+                            {/*<Menu.Item>*/}
+                            {/*    <Link to="/register">Register</Link>*/}
+                            {/*</Menu.Item>*/}
+                                {currentUser ? (
+                                    <div>
+                                        <Menu.Item>
+                                            <Link to="/profile">{currentUser.username}</Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <a href="/" onClick={this.logOut}>
+                                                LogOut
+                                            </a>
+                                        </Menu.Item>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <Menu.Item>
+                                            <Link to="/login">Login</Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <Link to="/register">Register</Link>
+                                        </Menu.Item>
+                                    </div>
+                                )}
                         </Menu>
                     </Header>
                 </Layout>
@@ -76,4 +90,5 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+
+export default Navigbar;

@@ -1,7 +1,9 @@
 import React from 'react';
 import {Layout, Row, Col, Menu} from 'antd';
 import 'antd/dist/antd.css';
-import Header from './components/Header.js';
+import './app.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navigbar from './components/Header.js';
 import Login from './components/login';
 import Register from './components/register';
 import Profile from './components/profile';
@@ -20,7 +22,7 @@ export default function App() {
     return (
         <Router>
             <div>
-                <Header />
+                <Navigbar/>
                 {/*<Layout>*/}
                 {/*    <Header style={{position: 'fixed', zIndex: 1, width: '100%'}}>*/}
                 {/*        <Menu theme="dark" mode="horizontal">*/}
@@ -54,20 +56,25 @@ export default function App() {
                         <Route path="/onlineCharts">
                             <OnlineCharts/>
                         </Route>
-                        <Route path="/">
+                        <Route exact={true} path="/">
                             <Home/>
                         </Route>
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/register" component={Register} />
-                        <Route exact path="/profile" component={Profile} />
+                        <Route path="/login">
+                            <SignIn/>
+                        </Route>
+                        <Route path="/register">
+                            <SignUp/>
+                        </Route>
+                        <Route path="/profile">
+                            <Account/>
+                        </Route>
                     </Switch>
+                    <Footer style={{textAlign: 'center', width: "100%"}}>
+                        <p>Ant Design ©2018 Created by Ant UED</p>
+                        <p>Ant Design ©2018 Created by Ant UED</p>
+                        <p>Ant Design ©2018 Created by Ant UED</p>
+                    </Footer>
                 </Content>
-
-                <Footer style={{textAlign: 'center', width: "100%"}}>
-                    <p>Ant Design ©2018 Created by Ant UED</p>
-                    <p>Ant Design ©2018 Created by Ant UED</p>
-                    <p>Ant Design ©2018 Created by Ant UED</p>
-                </Footer>
             </div>
         </Router>
     );
@@ -77,21 +84,51 @@ function Home() {
     return <Grid/>;
 }
 
+function SignIn() {
+    return (
+        <Content style={{ padding: '0 50px' }}>
+            <Row align="center">
+                <Col>
+                    <Login/>
+                </Col>
+            </Row>
+        </Content>
+    );
+}
+
+function SignUp() {
+    return (
+        <div>
+            <Content style={{ padding: '0 50px' }}>
+                <Register/>
+            </Content>
+        </div>
+    );
+}
+
+function Account() {
+    return <Profile/>;
+}
+
 function StaticCharts() {
     return (
         <div>
-            <h2>Static Charts</h2>
-            <Row align="middle" justify="space-between">
-                <Col >
-                    <Table/>
-                </Col>
-                <Col >
-                    <Donut/>
-                </Col>
-                <Col >
-                    <Area/>
-                </Col>
-            </Row>
+            <Content style={{ padding: '0 50px' }}>
+                <header className="jumbotron">
+                    <h2>Static Charts</h2>
+                </header>
+                <Row align="middle" justify="space-between">
+                    <Col>
+                        <Table/>
+                    </Col>
+                    <Col>
+                        <Donut/>
+                    </Col>
+                    <Col>
+                        <Area/>
+                    </Col>
+                </Row>
+            </Content>
         </div>
     )
 }
@@ -99,16 +136,20 @@ function StaticCharts() {
 function OnlineCharts() {
     return (
         <div>
-            <h2>Online charts</h2>
-            <FetchCarts />
-            <Row align="middle" justify="space-between">
-                <Col >
-                    <Pie/>
-                </Col>
-                <Col >
-                    <Radial/>
-                </Col>
-            </Row>
+            <Content style={{ padding: '0 50px' }}>
+                <header className="jumbotron">
+                    <h2>Online charts</h2>
+                </header>
+                <FetchCarts/>
+                <Row align="middle" justify="space-between">
+                    <Col>
+                        <Pie/>
+                    </Col>
+                    <Col>
+                        <Radial/>
+                    </Col>
+                </Row>
+            </Content>
         </div>
     )
 }

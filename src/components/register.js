@@ -87,7 +87,7 @@ export default class Register extends React.Component {
         this.setState({
             message: "",
             successful: false
-        })
+        });
 
         this.form.validateAll();
 
@@ -177,6 +177,7 @@ export default class Register extends React.Component {
 
                                 <div className="form-group">
                                     <button className="btn btn-primary btn-block">Sign Up</button>
+                                    <a href="/login">Login</a>
                                 </div>
                             </div>
                         )}

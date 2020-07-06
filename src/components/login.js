@@ -131,6 +131,7 @@ export default class Login extends React.Component {
                                 )}
                                 <span>Login</span>
                             </button>
+                            <a href="/register">Register</a>
                         </div>
 
                         {this.state.message && (
