@@ -12,9 +12,9 @@ class Navigbar extends React.Component {
         super(props);
         this.logOut = this.logOut.bind(this);
 
-        this.state = {
+        this.state = ({
             currentUser: undefined
-        };
+        });
     }
 
     componentDidMount() {
@@ -24,10 +24,6 @@ class Navigbar extends React.Component {
             this.setState({
                 currentUser: user
             });
-        } else {
-            this.setState({
-                currentUser: undefined
-            })
         }
     }
 
@@ -52,27 +48,20 @@ class Navigbar extends React.Component {
                             <Menu.Item>
                                 <Link to="/onlineCharts">Online charts</Link>
                             </Menu.Item>
-                            {currentUser ? (
-                                <div>
-                                    <Menu.Item>
-                                        <Link to="/profile">{currentUser.username}</Link>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <a href="/" onClick={this.logOut}>
-                                            LogOut
-                                        </a>
-                                    </Menu.Item>
-                                </div>
-                            ) : (
-                                <div>
-                                    <Menu.Item>
-                                        <Link to="/login">Login</Link>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <Link to="/register">Register</Link>
-                                    </Menu.Item>
-                                </div>
-                            )}
+                            <Menu.Item>
+                                <Link to="/profile">Account</Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <a href="/" onClick={this.logOut}>
+                                    LogOut
+                                </a>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <Link to="/login">Login</Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <Link to="/register">Register</Link>
+                            </Menu.Item>
                         </Menu>
                     </Header>
                 </Layout>

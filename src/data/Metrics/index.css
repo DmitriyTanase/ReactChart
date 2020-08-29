@@ -1,0 +1,76 @@
+.metrics {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.metrics-row {
+    display: flex;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    width: 100%;
+    min-width: 140px;
+    max-width: 235px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.metric.metric-color_red {
+    background: #ff7675d9;
+}
+.metric.metric-color_green {
+    background: #00b894d9;
+}
+
+.metric:last-child {
+    margin-right: 0;
+}
+.metrics-row:last-child > .metric {
+    margin-bottom: 0;
+}
+
+.metric .metric-content {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.metric .metric-content .metric-value {
+	color: #595a5c;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.metric .metric-content .metric-title {
+    color: #373737;
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.metric .metric-trend-wrapper {
+    height: 30px;
+    padding-bottom: 15px;
+}
+
+
+.metric p {
+    line-height: unset;
+    margin: 0;
+    padding: 0;
+}
